@@ -1,6 +1,7 @@
 var browserify = require('browserify');
 var fs = require("fs");
-var path = require("path")
+var path = require("path");
+var prefix = "card2"
 browserify({
 	entries: 'App/main.js',
 	debug: true,
@@ -12,7 +13,7 @@ browserify({
 
 	.transform('vueify', {})
 	.plugin('vueify/plugins/extract-css', {
-		out: 'dist/bundle.css' // can also be a WritableStream
+		out: `dist/${prefix}.bundle.css` // can also be a WritableStream
 	})
 	// 转成node readabel stream流，拥有pipe方法（stream流分小片段传输）
 	.bundle()
@@ -20,4 +21,4 @@ browserify({
 		console.log(error.toString())
 	})
 	// 转成gulp系的stream流，node系只有content，添加名字
-	.pipe(fs.createWriteStream("dist/index.js"))
+	.pipe(fs.createWriteStream(`dist/${prefix}.js`))

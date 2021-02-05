@@ -17,10 +17,10 @@
 <body>
 
 <p>在两个矩形框中来回拖动 p 元素:</p>
-<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter()">
-	<p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" ondragend="drawEnd()" id="dragtarget">拖动我!</p>
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter()" ondragleave="dragLeave(1)">
+	<p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" ondragend="dragEnd()" id="dragtarget">拖动我!</p>
 </div>
-<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter()">
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="dragEnter()" ondragleave="dragLeave(2)" >
 </div>
 <p id="demo">
 
@@ -41,7 +41,7 @@ function drop(event) {
     event.target.appendChild(document.getElementById(data));
     document.getElementById("demo").innerHTML = "p 元素已被拖动";
 }
-function drawEnd(params) {
+function dragEnd(params) {
     console.log(" p 元拖动结束")
 	document.getElementById("demo").innerHTML = " p 元拖动结束";
 }
@@ -49,7 +49,9 @@ function dragEnter(params) {
     // console.log(arguments)
     console.log("被拖动进来")
 }
-
+function dragLeave(params) {
+    console.log("离开容器"+params)
+}
 </script>
 
 </body>
