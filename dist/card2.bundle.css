@@ -1,21 +1,23 @@
-.topDiv
-{
-	width: 100%;
-	float: center;
-	
+moveStat {
+  width: 10%;
+  z-index: 90;
+  position: absolute;
 }
-.topDiv > div
-{
-	display: flex;
-	width: 100%;
-	 flex-direction: row;
-	 justify-content: center;
-	  align-items:center;
-	/* float: center; */
+.topDiv {
+  width: 100%;
+  float: center;
 }
-.topDiv > div >div{
-	/* float: left;	 */
+.topDiv > div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* float: center; */
 }
-.topDiv>div>img{
-	/* width:10%;	 */
+.topDiv > div > div {
+  /* float: left;	 */
+}
+.topDiv > div > img {
+  /* width:10%;	 */
 }

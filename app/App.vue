@@ -41,7 +41,7 @@
 <script>
 var rq = require("arrayHelp/rand-lib/rand-uq");
 var {compareFull} = require("arrayHelp/array.compare/index")
-export default {
+module.exports= {
 	data(){
 		return {
 			cardList:[[1,2,3],[0,1,2]],
