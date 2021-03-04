@@ -156,17 +156,22 @@ module.exports = {
         // ev.preventDefault();
         return;
       }
-      console.log(evt);
-      console.log("被拖动了");
+      evt.preventDefault()
+      // console.log("被拖动了");
       //  oL = touch.clientX - div1.offsetLeft;
       // oT = touch.clientY - div1.offsetTop;
     },
+    /**
+     * @param {Events} e
+     */
     touchMove(e,val) {
       var ev = e;
       var touch = ev.targetTouches[0];
       var oLeft = touch.clientX;
       var oTop = touch.clientY;
-      document.body.offsetWidth;
+      // document.body.offsetWidth;
+      // window.event.
+      ev.preventDefault()
 
      /*  if (oLeft < 0) {
         oLeft = 0;
