@@ -1,8 +1,8 @@
 <template>
   <div class="topDiv" align="center">
-    <div :hidden="moveStat" width="10%" :style="{ left: mLeft, top: mTop }">
+    <!-- <div :hidden="moveStat" width="10%" :style="{ left: mLeft, top: mTop }">
       <img src="./card.img/back.png" width="10%" />
-    </div>
+    </div> -->
     <div @dragover="dragOver(0)" class="moveStat">
       <div width="5%" @dragenter="currentTop(0, 0)"  class="c0-0" >
         <img src="./card.img/side.png" width="90%" />
